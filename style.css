@@ -1,135 +1,72 @@
+/* Reset standaardmarges en padding */
+body, h1, h2, h3, ul, li, p {
+    margin: 0;
+    padding: 0;
+}
+
+/* Basisopmaak */
 body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f7f7f7;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Minimaliseer viewport-hoogte om ervoor te zorgen dat de footer altijd onderaan staat */
+}
 
-    font-family: Arial, Helvetica, sans-serif;
-   
-background-color: lightgreen;
-  }
+header {
+    background-color: #222;
+    color: #fff;
+    text-align: center;
+    padding: 1em 0;
+}
 
-  
- 
+nav ul {
+    list-style-type: none;
+    text-align: center;
+    background-color: #222;
+}
 
-  .container {
+nav ul li {
+    display: inline;
+    margin: 0 20px;
+}
 
-    max-width: 400px;
+nav ul li a {
+    text-decoration: none;
+    color: #fff;
+}
 
-    margin: 0 auto;
-
+main {
+    flex-grow: 1; /* Laat de hoofdinhoud groeien om de beschikbare ruimte in te nemen */
+    max-width: 800px;
+    margin: 20px auto;
     padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
 
-    border: 3px solid black;
-    border-radius: 5px;
+section {
+    margin-bottom: 30px;
+}
 
-  }
+h1, h2, h3 {
+    color: #333;
+}
 
- 
+ul {
+    list-style-type: none;
+}
 
-  .container img.avatar {
+li {
+    margin-bottom: 10px;
+}
 
-    width: 40%;
-
-    border-radius: 50%;
-
-    margin: 0 auto;
-
-    display: block;
-
-  }
-
- 
-
-  .container label {
-
-    font-weight: bold;
-
-  }
-
- 
-
-  .container input[type=text], .container input[type=password] {
-
-    width: 100%;
-
-    padding: 12px 20px;
-
-    margin: 8px 0;
-
-    display: inline-block;
-
-    border: 1px solid black;
-
-    box-sizing: border-box;
-
-  }
-
- 
-
-  .container button {
-
-    background-color: yellowgreen;
-
-    color: white;
-
-    padding: 14px 20px;
-
-    margin: 8px 0;
-
-    border: none;
-
-    cursor: pointer;
-
-    width: 100%;
-
-  }
-
- 
-
-  .container button:hover {
-
-    opacity: 0.8;
-    color: blue;
-
-  }
-
- 
-
-  .container .cancelbtn {
-
-    width: auto;
-
-    padding: 10px 18px;
-
-    background-color: yellowgreen;
-
-  }
-
- 
-
-  .container .psw {
-
-    float: right;
-
-    padding-top: 16px;
-
-  }
-
- 
-
-  @media screen and (max-width: 300px) {
-
-    .container .psw {
-
-      display: block;
-
-      float: none;
-
-    }
-
-    .container .cancelbtn {
-
-      width: 100%;
-
-    }
-
-  }
-
- 
+footer {
+    text-align: center;
+    background-color: #222;
+    color: #fff;
+    padding: 10px 0;
+}
+ img {
+    width: 200px;
+ }
