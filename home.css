@@ -2,25 +2,11 @@
     text-align: center;
     color: black;
   }
-img {
+  img {
     width:  20px;
     height: 20px;
     position: relative;
 }
-a.maanden:link,a.maanden:visited {
-display:block;
-color:white;
-background-color:green;
-padding: 2px;
-text-align:center;
-text-decoration:none;
-}
-a.maanden:hover,a.maanden:active {
-  background-color:greenyellow;
-}
-a.link:visited {color:black;}
-  a.link:hover   {color:#00FF00;}
-  a.link:active  {color:#00FF00;}
 h1 { 
  text-align: center;
  color: black;
@@ -31,8 +17,14 @@ body {
   margin: 0;
   padding: 0;
   list-style: none;
+  background-image: url("Web-1280-autoverhuur1520.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover ;
  }
-
+ a.link:visited {color:black;}
+ a.link:hover   {color:#00FF00;}
+ a.link:active  {color:#00FF00;}
 main {
   margin: 20px;
 }
@@ -136,14 +128,11 @@ section {
     text-align: left;
   }
   button {
-    display:block;
     background-color: green;
     color: white;
     padding: 10px 20px;
     border: none;
     border-radius: 5px;
-    text-align:center;
-    text-decoration:none;
     cursor: pointer;
   }
   
@@ -154,9 +143,10 @@ section {
 
 .auto_huren_container {
     text-align: center;
+    margin-top: 400px;
     padding: 20px;
-    border: 2px solid #080000;
-    border-radius: 5px;
+    box-shadow: 32px 16px 16px 16px #080000;
+    border-radius: 5px 5px 0px 0px ;
     background-color: white;
 }
 
@@ -225,15 +215,6 @@ section {
   animation-name: fade;
   animation-duration: 1.5s;
 }
-
-.cssTitle1 { font-family: Arial, Helvetica; font-size: medium; color: #FFFFFF; background-color: green; } 
-.cssHeading1 { font-family: Arial, Helvetica; font-size: 12px; color: #FFFFFF; background-color: green; } 
-.cssDays1 { font-family: Arial, Helvetica; font-size: 12px; color: #000000; background-color: #FFFFFF; } 
-.cssWeeks1 { font-family: Arial, Helvetica; font-size: 12px; color: #FFFFFF; background-color: green; } 
-.cssSaturdays1 { font-family: Arial, Helvetica; font-size: 12px; color: #000000; background-color: #FFFFFF; } 
-.cssSundays1 { font-family: Arial, Helvetica; font-size: 12px; color: #000000; background-color: #FFFFFF; } 
-.cssVerlopen1 { font-family: Arial, Helvetica; font-size: 12px; color: #000000; background-color: #DDDDDD; } 
-.cssHilight1 { font-family: Arial, Helvetica; font-size: 12px; color: #000000; background-color: #AAAAAA; cursor: default; } 
 
 .placeholder {
     color: #bbb;
