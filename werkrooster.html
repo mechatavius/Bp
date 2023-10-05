@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medewerkerspagina</title>
+    <style>
+    
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #282626;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #ffffff;
+            box-shadow: 0 0 10px rgba(88, 85, 85, 0.1);
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        input[type="text"],
+        select {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #000000;
+            border-radius: 4px;
+        }
+
+        button {
+            background-color: #333;
+            color: #000000;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #555;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            border: 1px solid #ccc;
+            padding: 10px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #f9f9f9;
+            cursor: pointer;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Medewerkerspagina</h1>
+    </header>
+
+    <div class="container">
+        <label for="medewerker-naam">Je naam:</label>
+        <input type="text" id="medewerker-naam" placeholder="Voer je naam in">
+
+        <label for="dag-select">Selecteer een dag:</label>
+        <select id="dag-select">
+            <option value="maandag">Maandag</option>
+            <option value="dinsdag">Dinsdag</option>
+            <option value="woensdag">Woensdag</option>
+            <option value="donderdag">Donderdag</option>
+            <option value="vrijdag">Vrijdag</option>
+        </select>
+
+        <label for="beschikbaarheid">Werkrooster:</label>
+        <input type="text" id="beschikbaarheid" placeholder="Voer je beschikbaarheid in (bijv. 08:00 - 17:00)">
+
+       
+
+        <h2>Medewerkersschema</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th onclick="toonGereserveerdeAuto('maandag')">Maandag</th>
+                    <th onclick="toonGereserveerdeAuto('dinsdag')">Dinsdag</th>
+                    <th onclick="toonGereserveerdeAuto('woensdag')">Woensdag</th>
+                    <th onclick="toonGereserveerdeAuto('donderdag')">Donderdag</th>
+                    <th onclick="toonGereserveerdeAuto('vrijdag')">Vrijdag</th>
+                </tr>
+            </thead>
+            <tbody id="schema-lijst">
+              
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        const reserveringen = {
+            maandag: "Auto A",
+            dinsdag: "Auto B",
+            woensdag: "Auto C",
+            donderdag: "Auto D",
+            vrijdag: "Auto E"
+        };
+
+        function reserveerAuto() {
+            const medewerkerNaam = document.getElementById("medewerker-naam").value;
+            const dagSelect = document.getElementById("dag-select");
+            const geselecteerdeDag = dagSelect.options[dagSelect.selectedIndex].value;
+            const beschikbaarheid = document.getElementById("beschikbaarheid").value;
+
+            const schemaLijst = document.getElementById("schema-lijst");
+            const rij = document.createElement("tr");
+            rij.innerHTML = `
+                <td>${geselecteerdeDag}</td>
+                <td>${medewerkerNaam}</td>
+                <td>${beschikbaarheid}</td>
+            `;
+            schemaLijst.appendChild(rij);
+        }
+
+        function toonGereserveerdeAuto(dag) {
+            alert(`Gereserveerde auto voor ${dag}: ${reserveringen[dag]}`);
+        }
+    </script>
+</body>
+</html>
