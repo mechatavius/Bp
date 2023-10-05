@@ -12,34 +12,24 @@
 
 <body>
 
- 
-
-
 
  
-
-<form action="/action_page.php" method="post">
-
-  <div class="imgcontainer">
-  </div>
-
- 
-
+<div id="login">
   <div class="container">
+  <form id="login-form">
+    <h2>Inloggen</h2><br>
 
-    <label for="uname"><b>Username</b></label>
+    <label for="username"><b>Username</b></label>
 
-    <input type="text" placeholder="Enter Username" name="uname" required>
+    <input type="text" id="username" placeholder="Enter Username" name="username" required>
 
  
 
-    <label for="psw"><b>Password</b></label>
+    <label for="password"><b>Password</b></label>
 
-    <input type="password" placeholder="Enter Password" name="psw" required>
+    <input type="password" id="password" placeholder="Enter Password" name="password" required>
 
-       
-
-    <button type="submit">Login</button>
+    <button type="button" onclick="login()">Login</button>
 
     <label>
 
@@ -50,18 +40,50 @@
 
       <button type="button" class="cancelbtn">Cancel</button>
   
-      <span class="psw">Forgot <a href="#">password?</a></span>
+      <span class="password">Forgot <a href="#">password?</a></span>
   
     </div>
   </div>
 
- 
-
-
-
 </form>
 
- 
+<script>
+
+  // Simpele authenticatie - vervang dit met echte authenticatie
+  
+  function login() {
+  
+      const username = document.getElementById('username').value;
+  
+      const password = document.getElementById('password').value;
+  
+   
+  
+      // Voer hier je eigen authenticatielogica uit
+  
+      if (username === 'medewerker' && password === 'wachtwoord') {
+  
+          window.location.href = 'werkrooster.html';
+  
+      } else {
+  
+          alert('Ongeldige inloggegevens. Probeer opnieuw.');
+  
+      }
+  
+  }
+  
+   
+  
+  function logout() {
+  
+      document.getElementById('login').style.display = 'block';
+  
+      document.getElementById('medewerkersgedeelte').style.display = 'none';
+  
+  }
+  
+  </script>
 
 </body>
 
