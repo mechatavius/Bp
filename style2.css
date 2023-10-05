@@ -1,0 +1,239 @@
+body{
+    font-family:Arial, Helvetica, sans-serif
+}
+#hoes {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#rekla {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+h1{
+    background-color: yellowgreen;
+    text-align: center;
+    font-size: 40px;
+    
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    background-color: lightgreen;
+
+}
+
+li, a, button {
+    font-family: "montserrat", sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    color: #edf0f1;
+    text-decoration: none;
+}
+
+header {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 30px 10%;
+}
+
+.logo {
+    cursor: pointer;
+    margin-right: auto;
+    width: 200px;
+}
+
+nav {
+    order: 1;
+}
+
+.nav__links {
+    list-style: none;
+}
+
+.nav__links li {
+display: inline-block;
+padding: 0px 20px;
+}
+
+.nav__links li:nth-child(1) {
+    padding: 0px 20px 0 0;
+    }
+
+.nav__links li a {
+    transition: all 0.3s ease 0s;
+}
+
+.nav__links li a:hover {
+    color: black
+}
+
+.cta {
+    order: 2;
+}
+
+button {
+    margin-left: 20px;
+padding: 9px 25px;
+background-color: yellowgreen;
+border: none;
+border-radius: 50px;
+cursor: pointer;
+transition: all 0.3s ease 0s;
+}
+
+button:hover {
+    background-color: black;
+}
+
+p {
+    color: white;
+    font-size: 22px;
+    justify-content: space-around;
+}
+
+
+#footer .footer-top{
+    padding: 60px 0 30px 0;
+    background-color:light;
+    color: white;
+}
+#footer .footer-top .footer-contact{
+    margin-bottom: 30px;
+}
+#footer .footer-top .footer-contact h3{
+    color:yellowgreen;
+}
+#footer .footer-top .footer-contact h4{
+    font-size: 22px;
+    margin: 0 0 30px 0;
+    padding: 2px 0 2px 0;
+    line-height: 1;
+    font-weight: 700;
+}
+#footer .footer-top .footer-contact p{
+    font-size: 14px;
+    line-height: 24px;
+    margin-bottom: 0;
+    color: white;
+}
+#footer .footer-top h4{
+    font-size: 16px;
+    font-weight: bold;
+    position: relative;
+    padding-bottom: 12px;
+}
+#footer .footer-top .footer-links{
+    margin-bottom: 30px;
+    margin-top: 10px;
+}
+#footer .footer-top .footer-links h4{
+    color: yellowgreen;
+}
+#footer .footer-top .footer-links ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+#footer .footer-top .footer-links ul li{
+    padding: 10px 0;
+    display: flex;
+    align-items: center;
+}
+#footer .footer-top .footer-links ul li a{
+    text-decoration: none;
+    color: white;
+    display: inline-block;
+    line-height: 1;
+    font-weight: bold;
+    transition: 0.5s ease;
+}
+#footer .footer-top .footer-links ul li a:hover{
+    color: black;
+}
+#footer .footer-top .socail-links a{
+    font-size: 18px;
+    display: inline-block;
+    text-decoration: none;
+    background-color: lightblue;
+    color: white;
+    line-height: 1;
+    padding: 8px 0;
+    margin-right: 4px;
+    border-radius: 50%;
+    text-align: center;
+    width: 36px;
+    transition: 0.5s ease;
+}
+#footer .footer-top .socail-links a:hover{
+    background-color: aqua;
+    color: white;
+}
+#footer .copyright{
+    text-align: center;
+    float: left;
+}
+#footer .credits{
+    float: right;
+    text-align: center;
+    font-size: 13px;
+}
+#footer .credits a{
+    color: yellowgreen;
+}
+
+
+
+.card-image{
+   position: relative; 
+   height: 150px;
+   border-radius: 50%;
+}
+
+
+.card-image .card-img{
+    height: 100%;
+    width: 40%;
+    object-fit: cover;
+    border-radius: 50%;
+    
+}
+
+label{
+    color: white;
+}
+
+option{
+    color: white;
+}
+
+select{
+    color: white;
+}
+
+input{
+    background-color: yellowgreen;
+}
+
+datalist{
+    background-color: white;
+}
+
+textarea{
+    
+    background-color: yellowgreen;
+}
+
+img{
+    border-color: greenyellow;
+    width: 120px;
+}
