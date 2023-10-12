@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medewerkerspagina</title>
+</head>
+<body>
+
+<div id="login">
+    <h2>Inloggen</h2>
+    <form id="login-form">
+        <label for="username">Gebruikersnaam:</label>
+        <input type="text" id="username" name="username" required><br><br>
+
+        <label for="password">Wachtwoord:</label>
+        <input type="password" id="password" name="password" required><br><br>
+
+        <button type="button" onclick="login()">Inloggen</button>
+    </form>
+</div>
+
+
+<div id="medewerkersgedeelte" style="display: none;">
+    <h1>Medewerkerspagina</h1>
+
+    <h2>Overzicht van reserveringen</h2>
+    
+        <li>Reservering 1</li>
+        <li>Reservering 2</li>
+        <li>Reservering 3</li>
+   
+    </ul>
+
+    <button onclick="logout()">Uitloggen</button>
+</div>
+
+<script>
+
+function login() {
+    const username = document.getElementById('username').value;
+    const password = document.getElementById('password').value;
+
+  
+    if (username === 'medewerker' && password === 'wachtwoord') {
+        window.location.href = 'werkrooster.html';
+    } else {
+        alert('Ongeldige inloggegevens. Probeer opnieuw.');
+    }
+}
+
+function logout() {
+    document.getElementById('login').style.display = 'block';
+    document.getElementById('medewerkersgedeelte').style.display = 'none';
+}
+</script>
+
+</body>
+</html>
+

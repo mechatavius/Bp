@@ -1,0 +1,43 @@
+/* Algemene stijlen */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 0;
+}
+
+/* Tabelstijlen */
+.schedule-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #ffffff;
+}
+
+.schedule-title {
+    text-align: center;
+    font-weight: bold;
+    background-color: #304B90;
+    color: #ffffff;
+}
+
+.schedule-header {
+    text-align: center;
+    background-color: #304B90;
+    color: #ffffff;
+    padding: 10px;
+}
+
+.schedule-header:hover {
+    background-color: #ff0000;
+    cursor: pointer;
+}
+
+/* Aanvullende stijlen voor specifieke dagen */
+.schedule-table td {
+    text-align: center;
+    vertical-align: top;
+    padding: 10px;
+}
+
+/* Je kunt aanvullende stijlen toevoegen voor specifieke klassen zoals 'cssVerlopen1', 'cssSaturdays1', 'cssSundays1', etc. */
+
