@@ -23,11 +23,21 @@ h1{
     
 }
 
+select { 
+    background-color: white;
+    border-radius: 5px;
+}
+option{
+    background-color: white;
+    color: black;
+    border-radius: 5px;
+}
+
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    background-color: lightgreen;
+    background-color: beige;
 
 }
 
@@ -104,8 +114,7 @@ p {
 
 #footer .footer-top{
     padding: 60px 0 30px 0;
-    background-color:light;
-    color: white;
+    color: black;
 }
 #footer .footer-top .footer-contact{
     margin-bottom: 30px;
@@ -124,7 +133,7 @@ p {
     font-size: 14px;
     line-height: 24px;
     margin-bottom: 0;
-    color: white;
+    color: black;
 }
 #footer .footer-top h4{
     font-size: 16px;
@@ -151,14 +160,14 @@ p {
 }
 #footer .footer-top .footer-links ul li a{
     text-decoration: none;
-    color: white;
+    color: black;
     display: inline-block;
     line-height: 1;
     font-weight: bold;
     transition: 0.5s ease;
 }
 #footer .footer-top .footer-links ul li a:hover{
-    color: black;
+    color: yellowgreen;
 }
 #footer .footer-top .socail-links a{
     font-size: 18px;
@@ -209,19 +218,12 @@ p {
 }
 
 label{
-    color: white;
-}
-
-option{
-    color: white;
-}
-
-select{
-    color: white;
+    color: black;
 }
 
 input{
-    background-color: yellowgreen;
+    background-color: white;
+    border-radius: 5px;
 }
 
 datalist{
@@ -230,10 +232,12 @@ datalist{
 
 textarea{
     
-    background-color: yellowgreen;
+    background-color: white;
+    border-radius: 5px;
 }
 
 img{
     border-color: greenyellow;
     width: 120px;
+    margin: 25px 25px;
 }

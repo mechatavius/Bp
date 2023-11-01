@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Medewerkerspagina</title>
     <style>
-    
         body {
             font-family: Arial, sans-serif;
             background-color: #282626;
@@ -34,8 +33,7 @@
             margin-top: 10px;
         }
 
-        input[type="text"],
-        select {
+        input, select {
             width: 100%;
             padding: 10px;
             margin-top: 5px;
@@ -43,17 +41,18 @@
             border-radius: 4px;
         }
 
-        button {
-            background-color: #333;
-            color: #000000;
+        .button {
+            background-color: green;
+            color: white;
             padding: 10px 20px;
             border: none;
             border-radius: 4px;
             cursor: pointer;
+            transition-duration: 0.5s;
         }
 
-        button:hover {
-            background-color: #555;
+        .button:hover {
+            background-color: yellowgreen;
         }
 
         table {
@@ -81,48 +80,44 @@
     </header>
 
     <div class="container">
-        <label for="medewerker-naam">Je naam:</label>
-        <input type="text" id="medewerker-naam" placeholder="Voer je naam in">
+        <form action="#" method="get">
+            <label for="medewerker-naam">Je naam:</label>
+            <input type="text" id="medewerker-naam" placeholder="Voer je naam in">
 
-        <label for="dag-select">Selecteer een dag:</label>
-        <select id="dag-select">
-            <option value="maandag">Maandag</option>
-            <option value="dinsdag">Dinsdag</option>
-            <option value="woensdag">Woensdag</option>
-            <option value="donderdag">Donderdag</option>
-            <option value="vrijdag">Vrijdag</option>
-        </select>
+            <label for="dag-select">Selecteer een dag:</label>
+            <select id="dag-select">
+                <option value="Maandag">Maandag</option>
+                <option value="Dinsdag">Dinsdag</option>
+                <option value="Woensdag">Woensdag</option>
+                <option value="Donderdag">Donderdag</option>
+                <option value="Vrijdag">Vrijdag</option>
+            </select>
 
-        <label for="beschikbaarheid">Werkrooster:</label>
-        <input type="text" id="beschikbaarheid" placeholder="Voer je beschikbaarheid in (bijv. 08:00 - 17:00)">
+            <label for="beschikbaarheid">Werkrooster:</label>
+            <input type="text" id="beschikbaarheid" placeholder="Voer je beschikbaarheid in (bijv. 08:00 - 17:00)"><br><br>
 
-       
+            <button class="button" type="button" onclick="reserveerAuto()">Submit</button>
+        </form>
 
         <h2>Medewerkersschema</h2>
         <table>
             <thead>
                 <tr>
-                    <th onclick="toonGereserveerdeAuto('maandag')">Maandag</th>
-                    <th onclick="toonGereserveerdeAuto('dinsdag')">Dinsdag</th>
-                    <th onclick="toonGereserveerdeAuto('woensdag')">Woensdag</th>
-                    <th onclick="toonGereserveerdeAuto('donderdag')">Donderdag</th>
-                    <th onclick="toonGereserveerdeAuto('vrijdag')">Vrijdag</th>
+                    <th>Dag</th>
+                    <th>Naam</th>
+                    <th>beschikbaarheid</th>
                 </tr>
             </thead>
             <tbody id="schema-lijst">
-              
             </tbody>
         </table>
+        <br><br>
+        <button class="button" onclick="location.href='overzicht_van_reserveringen&year=2023&month=11&date=01.html';">Bekijk reserveringen</button>
+
     </div>
 
     <script>
-        const reserveringen = {
-            maandag: "Auto A",
-            dinsdag: "Auto B",
-            woensdag: "Auto C",
-            donderdag: "Auto D",
-            vrijdag: "Auto E"
-        };
+        const reserveringen = {};
 
         function reserveerAuto() {
             const medewerkerNaam = document.getElementById("medewerker-naam").value;
@@ -130,18 +125,33 @@
             const geselecteerdeDag = dagSelect.options[dagSelect.selectedIndex].value;
             const beschikbaarheid = document.getElementById("beschikbaarheid").value;
 
-            const schemaLijst = document.getElementById("schema-lijst");
-            const rij = document.createElement("tr");
-            rij.innerHTML = `
-                <td>${geselecteerdeDag}</td>
-                <td>${medewerkerNaam}</td>
-                <td>${beschikbaarheid}</td>
-            `;
-            schemaLijst.appendChild(rij);
+            if (!reserveringen[geselecteerdeDag]) {
+                reserveringen[geselecteerdeDag] = [];
+            }
+
+            reserveringen[geselecteerdeDag].push({
+                naam: medewerkerNaam,
+                beschikbaarheid: beschikbaarheid
+            });
+
+            updateSchedule();
         }
 
-        function toonGereserveerdeAuto(dag) {
-            alert(`Gereserveerde auto voor ${dag}: ${reserveringen[dag]}`);
+        function updateSchedule() {
+            const schemaLijst = document.getElementById("schema-lijst");
+            schemaLijst.innerHTML = "";
+
+            for (const dag in reserveringen) {
+                for (const entry of reserveringen[dag]) {
+                    const rij = document.createElement("tr");
+                    rij.innerHTML = `
+                        <td>${dag}</td>
+                        <td>${entry.naam}</td>
+                        <td>${entry.beschikbaarheid}</td>
+                    `;
+                    schemaLijst.appendChild(rij);
+                }
+            }
         }
     </script>
 </body>
